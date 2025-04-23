@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Portal do Conhecimento</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   </head>
   <body>
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <nav class="navbar bg-body-tertiary">
@@ -36,19 +37,19 @@
         </div>
       </nav>
 
+
       <div class="card">
         <div class="card-body mx-auto">
             Bem-vindo à Biblioteca Viva! Explore um mundo de conhecimento com apenas um clique.
         </div>
       </div>
 
-      <div class="card-group" id="#home">
+        <div class="row d-flex aling-items-stretch">
         <div class="col-1 col-sm-6 col-md-4">
           <img src="imgs/capa biblioteca digital.png" class="card-img-top" alt="..."  style="width: 100%; height: 300px;">
           <div class="card-body">
-            <h5 class="card-title">📚 +300 livros</h5>
+            <h5 class="card-title"><img src="" alt="">+300 livros</h5>
             <p class="card-text">Um acervo completo com mais de 300 títulos de diversos gêneros, autores e temas — sempre atualizado pra você.</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
           </div>
         </div>
         <div class="col-1 col-sm-6 col-md-4">
@@ -56,18 +57,405 @@
           <div class="card-body">
             <h5 class="card-title">🚀 Acesso Rápido</h5>
             <p class="card-text">Navegue com facilidade e encontre seus livros favoritos em poucos cliques, com visual moderno e intuitivo.</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
           </div>
         </div>
         <div class="col-1 col-sm-6 col-md-4">
           <img src="imgs/biblioteca-online.jpg" class="card-img-top" alt="..."  style="width: 100%; height: 300px;">
           <div class="card-body">
             <h5 class="card-title">💬 Contato Direto</h5>
-            Precisa de ajuda ou quer sugerir um livro? Fale com a gente de forma rápida e simples pelo nosso formulário de contato.            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            Precisa de ajuda ou quer sugerir um livro? Fale com a gente de forma rápida e simples pelo nosso formulário de contato.          
+           </div>
+        </div>
+      </div>   
+  </div>
+
+  <div class="mt-5 text-center" id="livros">
+    <h2 class="display-5 fw-bold"><img src="imgs/pilha-de-livros 2.png" alt="" width="50" height="54" > Livros em Destaque</h2>
+    <p>Confira alguns dos nossos títulos mais procurados</p>
+  </div>
+
+  <div class="d-flex mt-5" style="justify-content: center; gap: 20px;">
+    <a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Gêneros
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Ficção</a></li>
+      <li><a class="dropdown-item" href="#">Romance</a></li>
+      <li><a class="dropdown-item" href="#">Terror</a></li>
+      <li><a class="dropdown-item" href="#">Fantasia</a></li>
+      <li><a class="dropdown-item" href="#">Aventura</a></li>
+      <li><a class="dropdown-item" href="#">Mistério</a></li>
+    </ul>
+
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Pesquisar livro..." aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+    </form>
+  </div>
+</div>
+  </div>
+
+  
+  <div id="liveAlertPlaceholder"></div>
+ 
+
+
+  <div class="container mt-5">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 580px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="imgs/Pequeno Principe.webp" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">O Pequeno Príncipe</h5>
+                <ul class="list-unstyled">
+                  <li><strong>Autor:</strong> Antoine de Saint-Exupéry</li>
+                  <li><strong>Ano:</strong> 1943</li>
+                  <li><strong>Gênero:</strong> Ficção filosófica</li>
+                  <li><strong>Avaliação:</strong> ⭐️⭐️⭐️⭐️⭐️</li>
+                </ul>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> 
+                  Detalhes
+                </button>
+                <button type="button" class="btn btn-danger" id="liveAlertBtn">Favoritar</button>
+                <button type="button" class="btn btn-success">Adicionar à estante</button>
+  
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel"><img src="imgs/abra-o-livro.png" alt="" width="25" height="20"> Sinopse</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Um pequeno príncipe viaja de planeta em planeta e encontra diferentes personagens que representam aspectos do comportamento humano. Com sua pureza e olhar inocente, ele nos ensina sobre amizade, amor e o essencial da vida — aquilo que é invisível aos olhos.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar Sinopse</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+  
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 580px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="imgs/a culpa é da estrelas.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"> A Culpa é das Estrelas</h5>
+                <ul class="list-unstyled">
+                  <li><strong>Autor:</strong> John Green</li>
+                  <li><strong>Ano:</strong> 2014</li>
+                  <li><strong>Gênero:</strong> Romance</li>
+                  <li><strong>Avaliação:</strong> ⭐️⭐️⭐️⭐️⭐️</li>
+                </ul>
+  
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2"> 
+                  Detalhes
+                </button>
+                <button type="button" class="btn btn-danger" id="liveAlertBtn2">Favoritar</button>
+                <button type="button" class="btn btn-success">Adicionar à estante</button>
+  
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel2"><img src="imgs/abra-o-livro.png" alt="" width="25" height="20"> Sinopse</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Hazel Grace, uma adolescente com câncer, conhece Augustus, um garoto também em remissão, em um grupo de apoio. Eles desenvolvem uma amizade que se transforma em romance, compartilhando suas experiências com a doença, a vida e a morte. Juntos, eles embarcam em uma viagem para encontrar o autor de um livro que Hazel adora, enfrentando os desafios do câncer enquanto exploram o significado de viver intensamente, mesmo com a certeza da morte. A história toca temas como amor, perda e a busca por sentido na vida.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar Sinopse</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 580px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="imgs/alice-no-pais-das-maravilhas.webp" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Alice no País das Maravilhas</h5>
+                <ul class="list-unstyled">
+                  <li><strong>Autor:</strong> Lewis Carroll</li>
+                  <li><strong>Ano:</strong> 1865</li>
+                  <li><strong>Gênero:</strong> Fantasia, Aventura, Literatura Infantil</li>
+                  <li><strong>Avaliação:</strong> ⭐️⭐️⭐️⭐️⭐️</li>
+                </ul>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3"> 
+                  Detalhes
+                </button>
+                <button type="button" class="btn btn-danger" id="liveAlertBtn3">Favoritar</button>
+                <button type="button" class="btn btn-success">Adicionar à estante</button>
+  
 
+                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel3"><img src="imgs/abra-o-livro.png" alt="" width="25" height="20"> Sinopse</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Em uma tarde entediante, Alice segue um Coelho Branco apressado e acaba caindo em uma toca que a leva a um mundo completamente diferente — repleto de criaturas excêntricas, enigmas curiosos e situações absurdas. Ao longo dessa jornada surreal, Alice encontra personagens marcantes como o Gato Risonho, o Chapeleiro Maluco e a temida Rainha de Copas. Nesta história encantadora e cheia de imaginação, a lógica é virada do avesso e a fantasia toma conta, convidando o leitor a ver o mundo com olhos de criança e questionar o que é realmente “normal”.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar Sinopse</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 580px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="imgs/O Diário de Anne Frank.webp" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"> O Diário de Anne Frank</h5>
+                <ul class="list-unstyled">
+                  <li><strong>Autor:</strong> Anne Frank</li>
+                  <li><strong>Ano:</strong> 1947</li>
+                  <li><strong>Gênero:</strong> Biografia, Diário, História, Memórias</li>
+                  <li><strong>Avaliação:</strong> ⭐️⭐️⭐️⭐️⭐️</li>
+                </ul>
+  
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4"> 
+                  Detalhes
+                </button>
+                <button type="button" class="btn btn-danger" id="liveAlertBtn4">Favoritar</button>
+                <button type="button" class="btn btn-success">Adicionar à estante</button>
+  
+                <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel4"><img src="imgs/abra-o-livro.png" alt="" width="25" height="20"> Sinopse</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Escrito por Anne Frank durante os dois anos em que ficou escondida com a família para escapar da perseguição nazista, o diário é um relato comovente e real das experiências de uma adolescente em meio à Segunda Guerra Mundial. Com sensibilidade e profundidade, Anne descreve seus medos, sonhos, reflexões e o cotidiano no esconderijo, revelando uma impressionante maturidade diante do horror e da esperança. 
+                      </div>                     
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar Sinopse</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 580px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="imgs/O Código Da Vinci.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">O Código Da Vinci</h5>
+                <ul class="list-unstyled">
+                  <li><strong>Autor:</strong>  Dan Brown</li>
+                  <li><strong>Ano:</strong> 2003</li>
+                  <li><strong>Gênero:</strong>  Mistério,Ficção histórica</li>
+                  <li><strong>Avaliação:</strong> ⭐️⭐️⭐️⭐️⭐️</li>
+                </ul>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal5"> 
+                  Detalhes
+                </button>
+                <button type="button" class="btn btn-danger" id="liveAlertBtn5">Favoritar</button>
+                <button type="button" class="btn btn-success">Adicionar à estante</button>
+  
+
+                <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel5"><img src="imgs/abra-o-livro.png" alt="" width="25" height="20"> Sinopse</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Robert Langdon, um professor de simbologia, é chamado para resolver o assassinato de Jacques Saunière, curador do Museu do Louvre. No entanto, o que parecia ser apenas um assassinato comum se revela um mistério envolvendo códigos secretos, símbolos antigos e conspirações religiosas. A jornada de Langdon é repleta de reviravoltas que o levam a questionar a história e a própria religião, enquanto ele tenta impedir um plano que pode mudar a visão do mundo para sempre.                   
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar Sinopse</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 580px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="imgs/A Crônica de Nárnia.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">A Crônica de Nárnia</h5>
+                <ul class="list-unstyled">
+                  <li><strong>Autor:</strong> C.S. Lewis</li>
+                  <li><strong>Ano:</strong>  1950</li>
+                  <li><strong>Gênero:</strong> Fantasia, Aventura, Literatura Infantil</li>
+                  <li><strong>Avaliação:</strong> ⭐️⭐️⭐️⭐️⭐️</li>
+                </ul>
+  
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal6"> 
+                  Detalhes
+                </button>
+                <button type="button" class="btn btn-danger" id="liveAlertBtn6">Favoritar</button>
+                <button type="button" class="btn btn-success">Adicionar à estante</button>
+  
+                <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel6" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel6"><img src="imgs/abra-o-livro.png" alt="" width="25" height="20"> Sinopse</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        A série acompanha as aventuras de crianças que entram no mundo mágico de Nárnia, onde vivem experiências incríveis ao lado de seres fantásticos como faunos, dragões e leões. O livro central, O Leão, a Feiticeira e o Guarda-Roupa, mostra o encontro das crianças com Aslam, o grande leão, que as guia para derrotar a Feiticeira Branca e restaurar a paz em Nárnia.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar Sinopse</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 580px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="imgs/Cem Anos de Solidão.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Cem Anos de Solidão</h5>
+                <ul class="list-unstyled">
+                  <li><strong>Autor:</strong>  Gabriel García Márquez</li>
+                  <li><strong>Ano:</strong> 1967</li>
+                  <li><strong>Gênero:</strong> : Realismo Mágico, Ficção</li>
+                  <li><strong>Avaliação:</strong> ⭐️⭐️⭐️⭐️⭐️</li>
+                </ul>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal7"> 
+                  Detalhes
+                </button>
+                <button type="button" class="btn btn-danger" id="liveAlertBtn7">Favoritar</button>
+                <button type="button" class="btn btn-success">Adicionar à estante</button>
+  
+
+                <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel7" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel7"><img src="imgs/abra-o-livro.png" alt="" width="25" height="20"> Sinopse</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        A história da família Buendía, que vive na pequena cidade de Macondo, mistura o real com o fantástico. Ao longo de várias gerações, a família enfrenta amores perdidos, tragédias e a repetição dos mesmos erros, enquanto a cidade também se transforma com o passar do tempo. Considerado um dos maiores clássicos da literatura mundial, o livro é um marco do realismo mágico, estilo literário em que o sobrenatural é integrado à vida cotidiana.
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar Sinopse</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 580px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="imgs/Memórias Póstumas de Brás Cubas.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Memórias Póstumas de Brás Cubas</h5>
+                <ul class="list-unstyled">
+                  <li><strong>Autor:</strong>  Machado de Assis</li>
+                  <li><strong>Ano:</strong> 1881</li>
+                  <li><strong>Gênero:</strong> Realismo, Crônica Social</li>
+                  <li><strong>Avaliação:</strong> ⭐️⭐️⭐️⭐️⭐️</li>
+                </ul>
+  
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal8"> 
+                  Detalhes
+                </button>
+                <button type="button" class="btn btn-danger" id="liveAlertBtn8">Favoritar</button>
+                <button type="button" class="btn btn-success">Adicionar à estante</button>
+  
+                <div class="modal fade" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModalLabel8" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel8"><img src="imgs/abra-o-livro.png" alt="" width="25" height="20"> Sinopse</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Narrado por Brás Cubas, um homem morto, o livro oferece uma visão irônica e crítica da sociedade brasileira do século XIX. Através de sua narração pós-morte, Brás reflete sobre sua vida, seus erros, e os personagens que o rodearam. A obra de Machado de Assis é um clássico da literatura brasileira, trazendo uma profunda análise da vaidade humana, das instituições sociais e das relações de poder.
+
+                      </div>                     
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar Sinopse</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </body>
 </html>
